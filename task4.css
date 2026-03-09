@@ -1,0 +1,22 @@
+body{
+font-family: Arial;
+text-align: center;
+margin-top: 100px;
+}
+
+#timer{
+font-size: 50px;
+margin: 20px;
+color: darkblue;
+}
+
+button{
+padding: 10px 20px;
+margin: 5px;
+font-size: 16px;
+cursor: pointer;
+}
+
+button:hover{
+background-color: lightgray;
+}
