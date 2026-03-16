@@ -1,0 +1,57 @@
+class QAItem{
+
+constructor(question, answer){
+this.question = question;
+this.answer = answer;
+}
+
+render(){
+
+let container = document.createElement("div");
+container.className = "qa-item";
+
+let q = document.createElement("div");
+q.className = "question";
+q.innerText = "+ " + this.question;
+
+let a = document.createElement("div");
+a.className = "answer";
+a.innerText = this.answer;
+
+q.addEventListener("click", function(){
+
+if(a.style.display === "none" || a.style.display === ""){
+a.style.display = "block";
+q.innerText = "- " + this.question;
+}
+else{
+a.style.display = "none";
+q.innerText = "+ " + this.question;
+}
+
+}.bind(this));
+
+container.appendChild(q);
+container.appendChild(a);
+
+return container;
+
+}
+
+}
+
+let qaList = [
+
+new QAItem("What is JavaScript?", "JavaScript is a programming language used for web development."),
+
+new QAItem("What is HTML?", "HTML is used to structure web pages."),
+
+new QAItem("What is CSS?", "CSS is used to style web pages.")
+
+];
+
+let faqContainer = document.getElementById("faq");
+
+for(let i = 0; i < qaList.length; i++){
+faqContainer.appendChild(qaList[i].render());
+}
